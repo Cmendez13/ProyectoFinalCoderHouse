@@ -4,7 +4,7 @@ Blog Educativo
 
 El Desarrollo en Python con Django Framework  por Carlos Méndez
 
-La intenció principal fue crear un Blog funcional 
+La intención principal fue crear un Blog funcional 
 
 El diseño se baso en dos apps:
 
