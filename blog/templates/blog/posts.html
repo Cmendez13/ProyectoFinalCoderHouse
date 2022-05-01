@@ -1,0 +1,84 @@
+{% extends "blog/base.html" %}
+{% block title %}{{post.titulo}}{% endblock%}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="entry-content">
+
+    <article class="container">
+
+      <h1 class="entry-title"> {{post.titulo|safe}}</h1>
+      {% if request.user.is_authenticated %}
+      {% if user.username == post.autor.username %}
+      <ul style="list-style-type: '';">
+        <li><small> <a href="{% url 'edit-post' post.pk %}"> Editar</a></small></li>
+        <li><small> <a href="{% url 'delete-post' post.pk %}"> Borrar</a></small></li>      
+      </ul>
+      <br/>
+      {% endif %}
+      
+      
+      {% endif %}
+      <small>Por: {{post.autor.username}}</small>
+      
+      <br/>
+
+      <div class="row">
+
+        <div class="container">
+
+          <p>{{post.contenido|safe}}</p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <br />
+    {% if request.user.is_authenticated %}
+   <form action="{% url 'like-post' post.pk  %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" , name="post_id" class="btn btn-secondary btn-sm", value="{{ post.id }}"> Megusta </button>
+      
+    Total Likes:{{total_likes}}
+    {% else %}
+    </form>
+    Total Likes:{{total_likes}}
+    {% endif%}
+
+  </br>
+
+
+    <div class="row">
+      <div class="container">
+
+        {% if not post.comentarios.all %}
+
+        No hay comentarios, sé el primero. <a href="{% url 'comenta-post' post.pk %}"> Agregar Comentario </a>
+
+        {% else %}
+
+        {% for comentario in post.comentarios.all %}
+
+        <small>{{comentario.autor}} - {{comentario.fecha_publicacion}}</small>
+        <br />
+        {{comentario.contenido}}
+        <br />
+        {% endfor %}
+        <br />
+
+        
+        {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+
+{% endblock %}

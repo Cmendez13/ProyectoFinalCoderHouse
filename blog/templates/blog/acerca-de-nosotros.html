@@ -1,0 +1,79 @@
+{% extends 'blog/base.html' %}
+{% load static%}
+{% block content%}
+
+<div class="container">
+
+
+    <div class="row">
+
+        <div class="cols-xs-12 col-md-6 col-lg-4 mb-5">
+            <h1>Misión</h1>
+            </br>
+            <p>"Porque pensamos en grande, creamos este blog para que
+                profesionales en el área de las ciencias generen contenido que colabore con tu aprendizaje. Te damos los
+                recursos para que puedas convertirte en una nueva generación de pensadores creativos; una geneación
+                capaz de generar impacto y cambiar el futuro."</p>
+        </div>
+        <div class="cols-xs-12 col-md-6 col-lg-4 mb-5">
+            </br>
+            </br>
+            </br>
+            </br>
+            <div class="image-container">
+                <img id="about_img" class="subjects__conlumn-image" src="{% static 'images/about.png' %}" width="250"
+                    height="150">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="cols-xs-12 col-md-6 col-lg-4 mb-5">
+            </br>
+            </br>
+            </br>
+            <div class="image-container">
+                <img id="about_img" class="subjects__conlumn-image" src="{% static 'images/learn.jpeg' %}" width="250"
+                    height="150">
+            </div>
+        </div>
+        <div class="cols-xs-12 col-md-6 col-lg-4 mb-5">
+            <h1>Nosotros</h1>
+            </br>
+            <p text-align="right">"Amamos aprender. Entendemos que cualquier persona valora aprender aquello que le
+                apasiona. Por eso creamos
+                este espacio, para que escribas acerca de lo que te motiva, y lo compartas con otros. No importa lo
+                que te apasiona o motive, de seguro aquí lo encontrás.
+                "</p>
+        </div>
+    </div>
+    <!--El equipo-->
+
+    <div class="container">
+        <div class="row">
+            <div class="cols-xs-12 col-md-6 col-lg-4 mb-5">
+            </br>
+            </br>
+            </br>
+            <div class="image-container">
+                <img id="about_img" class="subjects__conlumn-image" src="{% static 'images/profile.jpg' %}" width="250"
+                height="150">
+            </div>
+        </div>
+        <div class="cols-xs-12 col-md-6 col-lg-4 mb-5">
+            <h1>Fundador</h1>
+            </br>
+            <p>"Matemático loco y con unas ganas inmensas de aprender enseñando a otros. Tratando de hacer lo que me gusta y agrgando conocimientos cada día."</p>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

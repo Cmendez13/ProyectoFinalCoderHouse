@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{usuario.usuario}}</h5>
+      <div class="image-container">
+          <img src="{{ usuario.profile.perfil}}">
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div>
+
+  
+{% endblock %}
