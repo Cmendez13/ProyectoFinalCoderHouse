@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="container my-3">
-    <h2>Search results : </h2>
+    <h2>Hay {{total}} Resultado(s) relacionado(s) con su busqueda: </h2>
+    </br>
     {% for post in allPosts  %}
     <div class="container">
         <div class="row">
@@ -11,7 +12,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{post.titulo|safe}}</h5>
                   <h5 class="card-text"> {{post.contenido|safe|striptags|slice:':80'}}...</h5>
-                  <p class="card-text">Por: {{post.autor}}</p>
+                  <p class="card-text">Por: {{post.autor}}-{{Post.autor.avatar}}</p>
                   <a href="{% url 'post-detail' post.pk %}" class="btn btn-primary">Leer más</a>
                 </div>
               </div>
@@ -19,10 +20,8 @@
         </div>
         <br/>
     </div> 
-    
-
         {% endfor %}
-    </div>
+  </div>
  {% endblock %}
 
 

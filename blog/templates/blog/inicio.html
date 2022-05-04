@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{block}
+{% block engage %}
+{% include 'blog/head.html' %}
+{% include 'blog/top3.html' %}
+
+<div class="container">
+    <div class="row home-hero">
+      <div class="col-sm-12 col-md-7">
+        <h1>Sé parte de nuestra comunidad</h1>
+          </br>
+            <p> Tu puedes ser un promovedor de cambios, genera contenidos que le permitan a otros compartir aprender acerda de las ciencias básicas.</p>
+      </div>
+      <div class="col-sm-12 col-md-5">
+        <div class="image-container">
+          <img src="{% static 'images/steam.jpeg' %}" /> 
+        </div>
+      </div>
+    </div>
+</div>
+</br>
+{% endblock %}

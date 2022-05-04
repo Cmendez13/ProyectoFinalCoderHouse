@@ -31,7 +31,7 @@
           <li><a href="{% url 'login' %}">Login</a></li>
           <li><a href="{% url 'registro' %}">Registro</a></li>
           {% endif %}
-          <form methord="GET" action="search" class="d-flex">
+          <form methord="GET" action="{% url 'post_search' %}" class="d-flex">
             <input class="form-control me-2" name="query", id="id_query",type="search" placeholder="Buscar" aria-label="Consulta">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
@@ -49,7 +49,10 @@
           {% block content %}
     
           {% endblock %}
-        
+
+          {% block engage %}
+
+          {% endblock %}
 
     </div>
 

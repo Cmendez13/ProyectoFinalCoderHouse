@@ -60,17 +60,20 @@
         No hay comentarios, sé el primero. <a href="{% url 'comenta-post' post.pk %}"> Agregar Comentario </a>
 
         {% else %}
+        <div class="container"></div>
 
         {% for comentario in post.comentarios.all %}
-
-        <small>{{comentario.autor}} - {{comentario.fecha_publicacion}}</small>
-        <br />
+        <small>{{comentario.autor}}- {{comentario.fecha_publicacion}}</small>
+          </br>
         {{comentario.contenido}}
-        <br />
+        </br>
+        <hr>
         {% endfor %}
-        <br />
+      </div>
+      
 
-        
+        <a href="{% url 'comenta-post' post.pk %}"> Agregar Comentario </a>
+
         {% endif %}
 
 

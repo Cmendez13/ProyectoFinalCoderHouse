@@ -17,10 +17,15 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
 
+
+def inicio(request):
+ 
+    return render(request,'blog/inicio.html')
+
 class homeview(ListView):
     model=Post
     template_name='blog/post-list.html'
-    #paginate_by = 10  # if pagination is desired
+    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -81,10 +86,11 @@ class CrearComentario(LoginRequiredMixin,CreateView):
  
 
 def consulta_Post(request):
-
     query=request.GET['query']
     allPosts= Post.objects.filter(titulo__icontains=query)
-    params={'allPosts': allPosts}
+    total=allPosts.count()
+    params={'allPosts': allPosts,'total':total}
+
     return render(request, 'blog/busqueda.html', params)
 
 class ResultadosConsultaView(ListView):
