@@ -8,7 +8,6 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 class Post(models.Model):
     titulo=models.CharField(max_length=200)
-    #autor=models.CharField(max_length=200)
     autor=models.ForeignKey(User,on_delete=models.CASCADE)
     contenido=RichTextField(blank=True,null=True)
     etiqueta=models.CharField(max_length=200,default='math')
